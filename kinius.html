@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Screen by Kinius</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #333;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .youtube-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: -1;
+            bottom: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #jamnik {
+            color: #006eff;
+        }
+        #cowner {
+            color: #a200ff;
+        }
+        #aqua {
+            color: #00e1ff;
+        }
+        #czerwien {
+            color: #ff0000;
+        }
+        .container {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 200px;
+        }
+        .containerS {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 50px;
+        }
+        .admin-container {
+            align-items: center;
+            margin-top: 30px;
+            background-color: tra;
+            padding: 20px;
+            border-radius: 15px;
+            display: flex;
+            width: 300px;
+            max-width: 100%;
+            cursor: pointer;
+        }
+        #m {
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+        }
+        #z {
+            box-shadow: 0 0 15px #00e1ff;
+        }
+        #o {
+            box-shadow: 0 0 15px #006eff; 
+        }
+        #co {
+            box-shadow: 0 0 15px #a200ff; 
+        }
+
+        #m .admin-container {
+    filter: blur(150px); 
+}
+
+#z .admin-container {
+    filter: blur(150px); 
+}
+
+#o .admin-container {
+    filter: blur(150px); 
+}
+
+#co .admin-container {
+    filter: blur(150px);
+}
+
+
+        .admin-image {
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+        }
+        .admin-details {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .admin-details h3 {
+            margin: 0 0 10px 0;
+            font-size: 24px;
+            color: #fff;
+        }
+        .admin-details h2 {
+            margin: 0;
+            font-size: 18px;
+            color: #ccc;
+        }
+        .admin-details p {
+            margin: 0;
+            color: #ddd;
+        }
+        .loader-container {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .admin-info-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+        .admin-info-popup-content {
+            background: #222;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .loading-text {
+            font-size: 24px;
+            letter-spacing: 2px;
+            animation: kinius 2s infinite;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        .logo {
+            width: 300px;
+            height: 200px;
+            animation: zoom 1.2s infinite alternate;
+        }
+        .volume-slider {
+            width: 80%;
+            margin-top: 30px;
+        }
+        .social-media-icons {
+      margin-top: 20px;
+      display: flex;
+  
+         align-items: center;
+       justify-content: center;
+        }
+
+    .social-media-icons img {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+    }
+
+        @keyframes zoom {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.1);
+            }
+        }
+        @keyframes kinius {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .custom-cursor {
+        cursor: none;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: transparent;
+        background-image: url("pliki/ikonki/cursor.png");
+        pointer-events: none;
+        z-index: 9999;
+    }
+
+    </style>
+
+
+</head>
+
+<body>
+    <div class="youtube-background">
+        <iframe width="1920" height="1080"
+            src="https://www.youtube.com/embed/XFyZIPkHUj8?si=y-Kquuwk0-nXgRh3?&controls=0&rel=0&showinfo=0&autoplay=1&loop=1&start=1&mute=1"
+            frameborder="0" allow="autoplay; fullscreen"></iframe>
+    </div>
+    <div class="loader-container">
+        <img class="logo" src="pliki/logo.png" alt="Logo">
+        <input class="volume-slider" type="range" min="0" max="100" value="50" step="1">
+
+        <div class="loading-text">Ładowanie plików serwera...</div>
+        <div class="social-media-icons">
+            <a href="https://discord.gg/TWOJDISCORD" target="_blank">
+                <img src="pliki/ikonki/discord.png" alt="Discord">
+            </a>
+            <a href="https://www.instagram.com/TWOJINSTAGRAM/" target="_blank">
+                <img src="pliki/ikonki/instagram.png" alt="Instagram">
+            </a>
+            <a href="https://www.tiktok.com/@TWOJTIKTOK/" target="_blank">
+                <img src="pliki/ikonki/tiktok.png" alt="TikTok">
+            </a>
+        </div>
+        
+        
+    </div>
+    <div class="container">
+        <div  id="o" class="admin-container" onclick="showAdminInfo('kinius', 'Twórca LoadingScreena')">
+            <img class="admin-image"
+                src="pliki/adm/kinius.gif" alt="Administrator 1">
+            <div class="admin-details">
+                <h3>kinius</h3>
+                <h2 id="jamnik">TWÓRCA</h2>
+            </div>
+        </div>
+        <div id="m" class="admin-container" onclick="showAdminInfo('', '')">
+            <img class="admin-image"
+                src="pliki/adm/inni.png" alt="Administrator 2">
+            <div class="admin-details">
+                <h3>NICK</h3>
+                <h2 id="czerwien">TWOJA RANGA</h2>
+            </div>
+        </div>
+        <div  id="z" class="admin-container" onclick="showAdminInfo('', '')">
+            <img class="admin-image"
+                src="pliki/adm/inni.png" alt="Administrator 2">
+            <div class="admin-details">
+                <h3>NICK</h3>
+                <h2 id="aqua">TWOJA RANGA</h2>
+            </div>
+        </div>
+        <div class="admin-info-popup" id="adminInfoPopup">
+            <div class="admin-info-popup-content" id="adminInfoContent">
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="containerS">
+        <div id="co" class="admin-container" onclick="showAdminInfo('', '')">
+            <img class="admin-image"
+                src="pliki/adm/inni.png" alt="Administrator 2">
+            <div class="admin-details">
+                <h3>NICK</h3>
+                <h2 id="cowner">TWOJA RANGA</h2>
+            </div>
+        </div>
+        <div id="m" class="admin-container" onclick="showAdminInfo('', '')">
+            <img class="admin-image"
+                src="pliki/adm/inni.png" alt="Administrator 2">
+            <div class="admin-details">
+                <h3>NICK</h3>
+                <h2 id="czerwien">TWOJA RANGA</h2>
+            </div>
+        </div>
+        <div  id="z" class="admin-container" onclick="showAdminInfo('', '')">
+            <img class="admin-image"
+                src="pliki/adm/inni.png" alt="Administrator 2">
+            <div class="admin-details">
+                <h3>NICK</h3>
+                <h2 id="aqua">TWOJA RANGA</h2>
+            </div>
+        </div>
+        <div class="admin-info-popup" id="adminInfoPopup">
+            <div class="admin-info-popup-content" id="adminInfoContent">
+            </div>
+        </div>
+    </div>
+    
+    <div class="custom-cursor"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cursor = document.querySelector('.custom-cursor');
+
+            document.addEventListener('mousemove', function(e) {
+                cursor.style.left = e.pageX - 10 + 'px';
+                cursor.style.top = e.pageY - 10 + 'px';
+            });
+
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+    const cursor = document.querySelector('.custom-cursor');
+
+    document.addEventListener('mousemove', function(e) {
+      
+        const isCorner = e.clientX <= 50 || e.clientY <= 50;
+
+        
+        if (!isCorner) {
+            cursor.style.left = e.pageX - 40 + 'px';
+            cursor.style.top = e.pageY - 30 + 'px';
+        }
+    });
+});
+
+    </script>
+
+
+    <script>
+        const volumeSlider = document.querySelector('.volume-slider');
+        const music = new Audio('pliki/kinius.mp3');
+        music.loop = true;
+
+        volumeSlider.addEventListener('input', (event) => { 
+            const volume = event.target.value / 100;
+            music.volume = volume;
+        });
+        music.play();
+    </script>
+        <script>
+
+
+
+
+
+      
+            function showAdminInfo(adminName, adminRole) {
+                const adminInfoPopup = document.getElementById('adminInfoPopup');
+                const adminInfoContent = document.getElementById('adminInfoContent');
+                adminInfoContent.innerHTML = `
+                    <h3>${adminName}</h3>
+                    <h2>${adminRole}</h2>
+                `;
+                adminInfoPopup.style.display = 'flex';
+            }
+            function zamknactogownoboniedziala() {
+             const adminInfoPopup = document.getElementById('adminInfoPopup');
+             adminInfoPopup.style.display = 'none';
+            }
+            const adminInfoPopup = document.getElementById('adminInfoPopup');
+            adminInfoPopup.addEventListener('click', function(event) {
+            const adminInfoContent = document.getElementById('adminInfoContent');
+          if (!adminInfoContent.contains(event.target)) {
+        zamknactogownoboniedziala();
+    }
+});
+
+
+      
+const adminContainers = document.querySelectorAll('.admin-container');
+
+adminContainers.forEach(container => {
+    container.addEventListener('mouseenter', function() {
+        this.style.transition = 'transform 0.2s';
+        this.style.transform = 'scale(1.05)';
+    });
+
+    container.addEventListener('mouseleave', function() {
+        this.style.transition = 'transform 0.2s';
+        this.style.transform = 'scale(1)';
+      
+    });
+    
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const cursor = document.querySelector('.custom-cursor');
+
+        document.addEventListener('mousemove', function (e) {
+            cursor.style.left = e.pageX - 10 + 'px';
+            cursor.style.top = e.pageY - 10 + 'px';
+        });
+
+        const clickableElements = document.querySelectorAll('.clickable');
+        const hoverableElements = document.querySelectorAll('.hoverable');
+
+        clickableElements.forEach(element => {
+            element.addEventListener('click', function () {
+            });
+        });
+
+        hoverableElements.forEach(element => {
+            element.addEventListener('mouseenter', function () {
+            });
+
+            element.addEventListener('mouseleave', function () {
+            });
+        });
+    });
+});
+
+</script>
+</body>
+
+</html>
